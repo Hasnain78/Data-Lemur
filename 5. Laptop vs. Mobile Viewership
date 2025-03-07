@@ -1,0 +1,12 @@
+with cte1 as (
+  select device_type, count(*) as c from viewership
+  group by 1
+),
+
+cte2 as (SELECT
+  sum(case when device_type = 'laptop' then c end) as laptop_views,
+  sum(case when device_type in ('phone', 'tablet') then c end) as mobile_views
+from cte1
+)
+
+select * from cte2
