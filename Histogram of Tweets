@@ -1,0 +1,12 @@
+with cte1 as (
+  select * from tweets
+  where tweet_date between '2022-01-01' and '2022-12-31'
+),
+
+cte2 as (
+  select user_id, count(tweet_id) number_of_tweets from cte1
+  group by 1
+)
+
+select number_of_tweets, count(*) number_of_users from cte2
+group by 1;
