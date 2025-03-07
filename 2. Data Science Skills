@@ -1,0 +1,12 @@
+with cte1 as (
+  select * from candidates
+  where skill in ('Python', 'Tableau', 'PostgreSQL')
+),
+
+cte2 as(
+  select candidate_id, count(*) as count from cte1
+  GROUP BY 1
+)
+
+select candidate_id from cte2
+where count=3;
