@@ -1,0 +1,6 @@
+with cte1 as (
+  SELECT * FROM parts_assembly
+  where finish_date is null
+)
+
+select part, assembly_step from cte1
