@@ -1,12 +1,13 @@
 # Data-Lemur
+# 🟢 Easy - Question 1 (Asked in Twitter Interview)
+
 ## 📊 SQL Query: Histogram of Tweets per User  
 
 ### 📝 Problem Statement  
-Assume you're given a table `tweets` containing Twitter tweet data. Write a query to obtain a **histogram of tweets per user in 2022**.  
+Assume you're given a table Twitter tweet data, write a query to obtain a histogram of tweets posted per user in 2022. Output the tweet count per user as the bucket and the number of Twitter users who fall into that bucket.
 
-The output should contain:  
-- The number of tweets per user (as **tweet bucket**).  
-- The count of users who fall into that bucket.  
+In other words, group the users by the number of tweets they posted in 2022 and count the number of users in each group.
+
 
 ### 🗂 Table Schema  
 
@@ -33,5 +34,55 @@ The output should contain:
 |-------------|----------|  
 | 1           | 2        |  
 | 2           | 1        |  
+---------
+
+# 🟢 Easy - Question 2  (Asked in LinkedIn Interview) 
 
 
+## 📊 SQL Query: Finding the Best Data Science Candidates  
+This question was **asked in a LinkedIn interview!** 🚀
+### 📝 Problem Statement  
+Given a table of candidates and their skills, you're tasked with finding the candidates best suited for an open Data Science job. You want to find candidates who are proficient in **Python**, **Tableau**, and **PostgreSQL**.
+
+Write a query to list the candidates who possess all of the required skills for the job. Sort the output by candidate ID in ascending order.
+
+**Assumption:**
+
+There are no duplicates in the candidates table.
+---
+
+### 🗂 Table Schema  
+
+| Column Name   | Type    |  
+|--------------|--------|  
+| candidate_id | integer |  
+| skill        | varchar |  
+
+
+
+### 📌 Example Input  
+
+| candidate_id | skill      |  
+|-------------|-----------|  
+| 123         | Python    |  
+| 123         | Tableau   |  
+| 123         | PostgreSQL |  
+| 234         | R         |  
+| 234         | PowerBI   |  
+| 234         | SQL Server |  
+| 345         | Python    |  
+| 345         | Tableau   |  
+
+
+
+### 🎯 Expected Output  
+
+| candidate_id |  
+|-------------|  
+| 123         |  
+
+📌 **Explanation:**  
+- Candidate **123** is included because they have all **three required skills**.  
+- Candidate **345** is **not** included because they are missing PostgreSQL.  
+
+---------------------------------------------------------------------------------------------------------------------
